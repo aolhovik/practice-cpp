@@ -1,0 +1,1 @@
+Write a program that counts the number of distinct unique words read from the standard input. For example, given the input "a horse and a dog" the program must output "4" (the word 'a' appears twice but only accounts for one distinct unique occurrence). The input text can be assumed to be in ASCII lower case. The program may ignore all characters that are not a-z.
