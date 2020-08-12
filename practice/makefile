@@ -1,14 +1,18 @@
 PROJECT_ROOT = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-.PHONY: all clean get_unique_char is_str_num palindrome rm_c_from_str
+.PHONY: all clean get_unique_char is_str_num palindrome rm_c_from_str tower_of_hanoi
 
 targets = \
+tower_of_hanoi \
 rm_c_from_str \
 palindrome \
 is_str_num \
 get_unique_char
 
 all: $(targets)
+
+tower_of_hanoi:
+	$(MAKE) -C $@
 
 get_unique_char:
 	$(MAKE) -C $@
@@ -29,4 +33,4 @@ rm_c_from_str:
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
 
 clean:
-	$(for target in $(targets); do $(MAKE) -C $$target clean; done)
+	for target in $(targets); do $(MAKE) -C $$target clean; done
