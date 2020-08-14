@@ -26,7 +26,6 @@ public:
     {
       return other.size == size;
     }
-    ;
   } tPiece;
 
   typedef std::list<tPiece> tLane;
@@ -49,7 +48,7 @@ public:
   operator= (TowerOfHanoi&&) = delete;
   ~TowerOfHanoi ();
 
-  tSolution
+  tSolution&
   solve ();
   bool
   validate (const tLane &initial) const;

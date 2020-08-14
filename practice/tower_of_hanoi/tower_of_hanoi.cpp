@@ -34,7 +34,7 @@ TowerOfHanoi::~TowerOfHanoi ()
 {
 }
 
-TowerOfHanoi::tSolution
+TowerOfHanoi::tSolution&
 TowerOfHanoi::solve ()
 {
   if (!_Lanes[0].empty ())
