@@ -68,4 +68,17 @@ MissingPacketsTest::test_missing_packets ()
       CPPUNIT_ASSERT(1 == counter.getCount (0));
       CPPUNIT_ASSERT(0 == counter.getCount (1));
     }
+    {
+      tPacket packets[4] =
+	{
+	  { 0, 0 },
+	  { 0, 2 },
+	  { 0, 5 },
+	  { 0, 6 } };
+      MissingPacketsCounter counter (reinterpret_cast<const char*> (packets),
+				     sizeof(packets));
+      CPPUNIT_ASSERT(3 == counter.getCount (0));
+      CPPUNIT_ASSERT(0 == counter.getCount (1));
+    }
+
 }
